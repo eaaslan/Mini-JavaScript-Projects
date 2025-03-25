@@ -1,0 +1,95 @@
+/* Put any custom CSS styles here.  */
+/* Be sure to delete the <style> tag in index.html if you want to use this stylesheet. */
+body {
+  margin: 0;
+  font-family: "Noto Sans", system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+    sans-serif;
+  min-height: 100vh;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.description-container{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  
+}
+.description-wrapper{
+  display: flex;
+  flex-direction: column;
+  margin-top: 84px;
+  gap: 7px;
+}
+
+.description{
+  border: solid 1px rgba(230,230,230,255);
+  border-radius: 10px;
+  background-color: rgba(250,250,250,255);
+  padding: 20px;
+  width: 338px;
+  height: 106px;
+
+}
+
+.description.required{
+  border-color: red;
+}
+.required-text{
+  margin-right: auto;
+  color: red;
+}
+
+.text-wrapper{
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  
+}
+.text-wrapper p{
+ margin-top: 0;
+}
+
+.limit-message{
+  margin-right: auto;
+  display: none;
+  color: red;
+
+
+}
+.textarea-char-count{
+
+
+}
+
+#firstDescription:focus{
+  border-color: blue;
+  outline: none;
+}
+
+#secondDescription:focus{
+  border-color: red;
+  outline: none;
+}
+
+.credits {
+  color: #777;
+  position: fixed;
+  bottom: 24px;
+  left: 24px;
+  font-size: 11px;
+  text-align: center;
+}
+
+.credits a {
+  color: #000;
+  font-weight: bold;
+}
+
+@media screen {
+  
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <!-- [Delete this comment] This file is the main file for the challenge. For the most part, you should be editing this file. -->
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Hero Section | GreatFrontEnd Projects</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+
+    <link rel="icon" href="img/favicon.ico" sizes="any" />
+    <style>
+      /* You may write styles inside this <style> tag or within `css/style.css`. */
+    </style>
+  </head>
+  <body>
+
+
+    <div class="description-container">
+
+        <div class="description-wrapper">
+          <label for="description">Description</label>
+          <textarea name="description" class="description" id="firstDescription" placeholder="Write your message..."></textarea>
+          <div class="text-wrapper">
+           <p class="limit-message first">Character limit exceeded</p>
+           <p class="textarea-char-count"><span id="firstCountedNum">0</span><span>/500 </span></p>
+          </div>
+        </div>
+      <div class="description-wrapper">
+        <label for="description">Description</label>
+        <textarea name="description" class="description required" id="secondDescription" placeholder="Write your message..."></textarea>
+        <div class="text-wrapper">
+          <p class="required-text">This field is required</p>
+          <p class="limit-message second">Character limit exceeded</p>
+          <p class="textarea-char-count"><span id="secondCountedNum">0</span><span>/500 </span></p>
+         </div>
+      </div>
+    </div>
+
+
+    <!-- Attribute this challenge to yourself! -->
+    <div class="credits">
+      A challenge by
+      <a
+        href="https://www.greatfrontend.com/projects?ref=challenges"
+        target="_blank"
+        >GreatFrontEnd Projects</a
+      >. Built by
+      <a href="https://www.greatfrontend.com/u/your_username" target="_blank"
+        >Your Name</a
+      >.
+    </div>
+    <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
+    <script src="js/index.js"></script>
+  </body>
+</html>
