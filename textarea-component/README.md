@@ -2,6 +2,7 @@
 
 A responsive textarea component with character counting and validation features.
 
+![text-component](https://github.com/user-attachments/assets/bc6833fe-2607-4538-bd54-6d16c9c5c394)
 
 
 ## Features
