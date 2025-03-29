@@ -47,27 +47,38 @@ loadJquery(() => {
         const items = getItemsFromStorage();
         if (items.length == 0) return;
 
-        const itemId = $(this)
-          .closest(".item-wrapper")
-          .find("li")
-          .attr("item-id");
+        const currentItem = $(this)
+        .closest(".item-wrapper")
+        .find("li")
+ 
+        console.log(currentItem)
+        const itemId = currentItem.attr("item-id");
+        const itemValue = currentItem.text();
 
-        const itemValue = $(this).closest(".item-wrapper").find("li").text();
-
-        console.log(itemValue);
         $("#grocery").focus();
         $("#grocery").val(`${itemValue}`);
-        $("input[type='submit']").attr("value", "Edit");
+        $("input[value='Edit']").css("display", "Block");
+        $("input[value='Submit']").css("display", "None");
 
-        const item = items.forEach((item) => {
+        $(document).on("click","input[value='Edit']",function(itemId){
+            const newValue=$("#grocery").val();
+          console.log()
+         items =items.map((item) => {
           if (item["id"] == itemId) {
-            item["itemName"] = "updated";
+            item["itemName"] = newValue
           }
-        });
-
+          return item
+          });
+        //TODO FIX EDIT
+        console.log( $("#grocery").val())
+        $("#grocery").val("");
+        $("input[value='Edit']").css("display", "none");
+        $("input[value='Submit']").css("display", "block");
+        
+        })
         localStorage.setItem("grocery-list", JSON.stringify(items));
-        console.log(item);
-        let li = $(this).closest(".item-wrapper").find("li").text("updated");
+    
+        //let li = $(this).closest(".item-wrapper").find("li").text("updated");
       });
     };
 
@@ -76,9 +87,7 @@ loadJquery(() => {
     };
     const displayItems = () => {
       const items = getItemsFromStorage() || [];
-      debugger;
       if (items.length == 0) return;
-      debugger;
       items.forEach((item) => {
         console.log(item);
         const groceryItem = `
@@ -87,11 +96,9 @@ loadJquery(() => {
         <span class="item-actions"> <button id="delete-btn" type="button">Delete</button> <button id="edit-btn" type="button">Edit</button></span>
          </div>
         `;
-
         $(".grocery-list").append(groceryItem);
       });
     };
-
     const getItemsFromStorage = () => {
       return JSON.parse(localStorage.getItem("grocery-list"));
     };
@@ -104,9 +111,7 @@ loadJquery(() => {
         description: "",
       };
       items.push(item);
-
       localStorage.setItem("grocery-list", JSON.stringify(items));
-
       $(".grocery-list").append(
         `
         <div class="item-wrapper">
@@ -115,8 +120,6 @@ loadJquery(() => {
          </div>
         `
       );
-
-      setEvents();
     };
     init();
   });
