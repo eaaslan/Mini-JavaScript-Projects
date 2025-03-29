@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.container {
+  width: 500px;
+  height: 500px;
+  background-color: aliceblue;
+  padding: 20px;
+}
+
+.title {
+  text-align: center;
+  margin: 20px 0;
+}
+
+.grocery-form {
+  display: flex;
+  justify-content: space-between;
+}
+
+.input {
+  border: none;
+  outline: none;
+  margin: 20px 0;
+}
+
+input[placeholder="e.g eggs"] {
+  width: 100%;
+}
+
+.item-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
+input[value="Edit"] {
+  display: none;
+}
