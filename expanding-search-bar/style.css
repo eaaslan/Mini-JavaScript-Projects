@@ -1,0 +1,35 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.search-container{
+    position: relative;
+    height: 50px;
+}
+input {
+    width: 0;
+    transition: width 0.3s ease;
+    border: none;
+    outline: none;
+    height: 100%;
+}
+input.expanded {
+    height: 100%;
+    width: 200px;
+    padding: 8px;
+    border: 1px solid #ccc;
+}
+.btn{
+  width: 50px;
+  height: 100%;
+  position: absolute;
+}
