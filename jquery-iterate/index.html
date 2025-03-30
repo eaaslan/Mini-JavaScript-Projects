@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>DOM Traversal Challenge</title>
+  <style>
+    .container { padding: 20px; background: #f0f0f0; }
+    .post { background: white; padding: 15px; margin: 10px; border-radius: 8px; }
+    .comment { background: #e3f2fd; margin: 10px 0; padding: 10px; border-left: 3px solid #2196f3; }
+    .reply { background: #f3e5f5; margin-left: 30px; padding: 8px; border-left: 3px solid #9c27b0; }
+    .nested-reply { background: #fff8e1; margin-left: 50px; padding: 5px; border-left: 3px solid #ff9800; }
+    .highlight { background: #ffff00 !important; }
+    .hidden { display: none; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="post" id="mainPost">
+      <h2>Blog Post Title <span class="author" id="postAuthor">@codingMaster</span></h2>
+      <p>Lorem ipsum dolor sit amet...</p>
+    </div>
+    <div class="comments">
+      <div class="comment" data-comment-id="1">
+        <p>Harika bir yazı! <button class="like-btn">Beğen</button></p>
+        <div class="replies">
+          <div class="reply" data-reply-id="1-1">
+            <p>Katılıyorum! <span class="reply-author">@user123</span></p>
+            <div class="nested-reply" data-nested-id="1-1-1">
+              <p>Teşekkürler! <button class="delete-btn">Sil</button></p>
+            </div>
+          </div>
+          <div class="reply" data-reply-id="1-2">
+            <p>Biraz daha detay ekleyebilir misiniz?</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="comment" data-comment-id="2">
+        <p>Çok faydalı oldu!</p>
+        <div class="replies">
+          <div class="reply" data-reply-id="2-1">
+            <p>Evet, kesinlikle.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+
+    //1.Soru: ID'si postAuthor olan elementi seçip yazı rengini kırmızı yapın.
+    //$("#postAuthor").css("color","red")
+
+    //2.Soru: Tüm üst seviye yorumları (.comment) seçip arkaplan rengini #b3e5fc yapın.
+    //$(".comment").css("background",'#b3e5fc')
+
+    //3 Soru: data-reply-id="1-1" olan reply'nin içindeki @user123 yazar adını kalın yapın.
+    //$("div[data-reply-id='1-1']").find("span").css("font-weight","bold")
+
+    //4 Soru: Sil butonuna tıklandığında, içinde bulunduğu .nested-reply elementi kaldırın.
+    // $(".delete-btn").on("click",function(){
+    //     $(this).closest(".nested-reply").remove()
+    // })
+
+    //5 Soru: İlk yorumun (data-comment-id="1") ikinci reply'sini (data-reply-id="1-2") gizleyin.
+    // $(`[data-comment-id='1'] .replies`).children().eq(1).hide()
+
+    //6 Soru: İçinde "Teşekkürler" metni geçen tüm elementleri seçip .highlight class'ı ekleyin.
+    //$(':contains("Teşekkürler")').addClass("highlight")
+
+    //7 Soru: Her "Beğen" butonuna tıklandığında, butonun yanına <span class="liked">Liked!</span> ekleyin.
+    // $(".like-btn").on("click",function(){
+    //     $(this).after("<span class='liked'>Liked!</span>")
+    // })
+
+    //8 Soru: data-nested-id="1-1-1" olan elementin en yakın .comment parent'ını seçip border rengini #ff0000 yapın.
+     $("[data-nested-id='1-1-1']").closest(".comment").css('border-color',"#ff0000")
+  </script>
+</body>
+</html>
