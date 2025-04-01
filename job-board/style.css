@@ -1,0 +1,17 @@
+body {
+    font-family: sans-serif;
+    background-color: antiquewhite;
+  }
+  
+  #loading {
+    display: none;
+  }
+  #load-btn{
+    display: none;
+  }
+  .job-card {
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+  }
+  
