@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+body{
+  display: flex;
+  background-color:rgb(26, 26, 46);
+  color: white;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Lato",sans-serif;
+  margin: 0;
+}
+
+.movie-container{
+  background-color: rgba(36, 36, 68, 0.7);
+  border-radius: 10px;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+.movie-container #movie{
+  font-size: 15px;
+  margin-left: 10px;
+  border-radius: 5px;
+  padding: 5px;
+  appearance: none;
+
+}
+.container{
+  perspective: 750px;
+}
+
+.showcase{
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.showcase li{
+  display: flex;
+
+}
+
+.screen{
+  margin: 20px auto;
+  background-color: whitesmoke;
+  height: 75px;
+  width: 150px;
+  transform: rotateX(-45deg);
+  box-shadow: 0 3px 10px rgba(255, 255, 255, 0.7);
+}
+
+.seat{
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background-color: white;
+  height: 15px;
+  width: 15px;
+  margin: 5px;
+}
+
+.seat:nth-child(3){
+  margin-left: 20px;
+}
+.seat:nth-last-child(3){
+  margin-right: 20px;
+}
+.seat:hover:not(.occupied){
+  cursor: pointer;
+}
+
+.selected{
+  background-color: grey;
+}
+.occupied{
+  background-color: rgb(148, 105, 105);
+}
+.row{
+  display: flex;
+}
