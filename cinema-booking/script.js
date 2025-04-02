@@ -76,7 +76,7 @@ loadJquery(() => {
         BookingService.getOccupiedSeatsForMovie(selectedMovie);
       occupiedSeats.forEach((seatId) => {
         const [row, column] = seatId.split("-");
-        $(`.row:eq(${parseInt(row)}) .seat:eq(${column})`).addClass("occupied"); // Added closing parenthesis
+        $(`.row:eq(${parseInt(row)}) .seat:eq(${column})`).addClass("occupied");
       });
 
       $("#count").text("0");
@@ -123,7 +123,6 @@ loadJquery(() => {
         }
       }
     });
-
     $("#movie").trigger("change");
   });
 });
