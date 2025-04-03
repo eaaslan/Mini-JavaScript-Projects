@@ -1,0 +1,19 @@
+(()=>{
+    $(()=>{
+       
+        setInterval(()=>{
+            $(".red").css("display","block")
+            setTimeout(()=>{
+                $(".red").css("display","none")
+                $(".yellow").css("display","block")
+                setTimeout(()=>{
+                    $(".yellow").css("display","none")
+                    $(".green").css("display","block")
+                    setTimeout(()=>{
+                        $(".green").css("display","none")
+                    },3000)
+                },500)
+            },4000)
+        },7500)
+    })
+})();
