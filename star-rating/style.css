@@ -1,0 +1,13 @@
+.star{
+    display: flex;
+
+}
+
+.star-icon {
+    width: 24px;
+    height: 24px;
+}
+
+.star-icon-filled {
+    fill: yellow;
+  }
